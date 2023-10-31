@@ -1,0 +1,619 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCrearRoller.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCrearRoller.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnCrearRoller.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCrearRoller.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="btnCrearRoller.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 111</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCrearRoller.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 0, 0, 0</value>
+  </data>
+  <data name="btnCrearRoller.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 35</value>
+  </data>
+  <data name="btnCrearRoller.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnCrearRoller.Text" xml:space="preserve">
+    <value>Crear Roller</value>
+  </data>
+  <data name="&gt;&gt;btnCrearRoller.Name" xml:space="preserve">
+    <value>btnCrearRoller</value>
+  </data>
+  <data name="&gt;&gt;btnCrearRoller.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCrearRoller.Parent" xml:space="preserve">
+    <value>grpSeleccionCrear</value>
+  </data>
+  <data name="&gt;&gt;btnCrearRoller.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="grpSeleccionCrear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="numericUpDownCantidad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 124</value>
+  </data>
+  <data name="numericUpDownCantidad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 23</value>
+  </data>
+  <data name="numericUpDownCantidad.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownCantidad.Name" xml:space="preserve">
+    <value>numericUpDownCantidad</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownCantidad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownCantidad.Parent" xml:space="preserve">
+    <value>grpSeleccionCrear</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownCantidad.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rdoPatinSobreHielo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoPatinSobreHielo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 83</value>
+  </data>
+  <data name="rdoPatinSobreHielo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 19</value>
+  </data>
+  <data name="rdoPatinSobreHielo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="rdoPatinSobreHielo.Text" xml:space="preserve">
+    <value>Patin Sobre Hielo</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinSobreHielo.Name" xml:space="preserve">
+    <value>rdoPatinSobreHielo</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinSobreHielo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinSobreHielo.Parent" xml:space="preserve">
+    <value>grpSeleccionCrear</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinSobreHielo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rdoPatinFreeStyle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoPatinFreeStyle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 58</value>
+  </data>
+  <data name="rdoPatinFreeStyle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 19</value>
+  </data>
+  <data name="rdoPatinFreeStyle.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rdoPatinFreeStyle.Text" xml:space="preserve">
+    <value>Patin FreeStyle</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinFreeStyle.Name" xml:space="preserve">
+    <value>rdoPatinFreeStyle</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinFreeStyle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinFreeStyle.Parent" xml:space="preserve">
+    <value>grpSeleccionCrear</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinFreeStyle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rdoPatinArtistico.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoPatinArtistico.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 33</value>
+  </data>
+  <data name="rdoPatinArtistico.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 19</value>
+  </data>
+  <data name="rdoPatinArtistico.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rdoPatinArtistico.Text" xml:space="preserve">
+    <value>Patin Artistico</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinArtistico.Name" xml:space="preserve">
+    <value>rdoPatinArtistico</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinArtistico.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinArtistico.Parent" xml:space="preserve">
+    <value>grpSeleccionCrear</value>
+  </data>
+  <data name="&gt;&gt;rdoPatinArtistico.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="grpSeleccionCrear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 314</value>
+  </data>
+  <data name="grpSeleccionCrear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 160</value>
+  </data>
+  <data name="grpSeleccionCrear.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="grpSeleccionCrear.Text" xml:space="preserve">
+    <value>Seleccione que patin desea crear</value>
+  </data>
+  <data name="&gt;&gt;grpSeleccionCrear.Name" xml:space="preserve">
+    <value>grpSeleccionCrear</value>
+  </data>
+  <data name="&gt;&gt;grpSeleccionCrear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpSeleccionCrear.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpSeleccionCrear.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="dataGridViewRollers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dataGridViewRollers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="dataGridViewRollers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>668, 111</value>
+  </data>
+  <data name="dataGridViewRollers.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewRollers.Name" xml:space="preserve">
+    <value>dataGridViewRollers</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewRollers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewRollers.Parent" xml:space="preserve">
+    <value>pnl_ContenedorDataGridSkate</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewRollers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnl_ContenedorDataGridSkate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnl_ContenedorDataGridSkate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 109</value>
+  </data>
+  <data name="pnl_ContenedorDataGridSkate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>668, 111</value>
+  </data>
+  <data name="pnl_ContenedorDataGridSkate.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;pnl_ContenedorDataGridSkate.Name" xml:space="preserve">
+    <value>pnl_ContenedorDataGridSkate</value>
+  </data>
+  <data name="&gt;&gt;pnl_ContenedorDataGridSkate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_ContenedorDataGridSkate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnl_ContenedorDataGridSkate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="Material.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Material.HeaderText" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <metadata name="Cantidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Cantidad.HeaderText" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="dataGridStock.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dataGridStock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="dataGridStock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>668, 109</value>
+  </data>
+  <data name="dataGridStock.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dataGridStock.Name" xml:space="preserve">
+    <value>dataGridStock</value>
+  </data>
+  <data name="&gt;&gt;dataGridStock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridStock.Parent" xml:space="preserve">
+    <value>pnl_FondoCrearSkate</value>
+  </data>
+  <data name="&gt;&gt;dataGridStock.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnl_FondoCrearSkate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnl_FondoCrearSkate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnl_FondoCrearSkate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>668, 109</value>
+  </data>
+  <data name="pnl_FondoCrearSkate.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;pnl_FondoCrearSkate.Name" xml:space="preserve">
+    <value>pnl_FondoCrearSkate</value>
+  </data>
+  <data name="&gt;&gt;pnl_FondoCrearSkate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl_FondoCrearSkate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnl_FondoCrearSkate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btn_Empaquetar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btn_Empaquetar.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btn_Empaquetar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_Empaquetar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="btn_Empaquetar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_Empaquetar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 111</value>
+  </data>
+  <data name="btn_Empaquetar.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 0, 0, 0</value>
+  </data>
+  <data name="btn_Empaquetar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 44</value>
+  </data>
+  <data name="btn_Empaquetar.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="btn_Empaquetar.Text" xml:space="preserve">
+    <value>Empaquetar</value>
+  </data>
+  <data name="&gt;&gt;btn_Empaquetar.Name" xml:space="preserve">
+    <value>btn_Empaquetar</value>
+  </data>
+  <data name="&gt;&gt;btn_Empaquetar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_Empaquetar.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;btn_Empaquetar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="Fecha.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Fecha.HeaderText" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <metadata name="NumeroSerie.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="NumeroSerie.HeaderText" xml:space="preserve">
+    <value>Numero de Serie</value>
+  </data>
+  <metadata name="Modelo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Modelo.HeaderText" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <metadata name="ApellidoOperario.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ApellidoOperario.HeaderText" xml:space="preserve">
+    <value>Apellido del operario</value>
+  </data>
+  <metadata name="CantidadTotalDeEmpaquetado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="CantidadTotalDeEmpaquetado.HeaderText" xml:space="preserve">
+    <value>Cantidad Total de empaquetado</value>
+  </data>
+  <data name="dataGridViewEmpaquetado.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="dataGridViewEmpaquetado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 220</value>
+  </data>
+  <data name="dataGridViewEmpaquetado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>668, 101</value>
+  </data>
+  <data name="dataGridViewEmpaquetado.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewEmpaquetado.Name" xml:space="preserve">
+    <value>dataGridViewEmpaquetado</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewEmpaquetado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewEmpaquetado.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewEmpaquetado.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="rdoEmpaquetarSobreHielo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoEmpaquetarSobreHielo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rdoEmpaquetarSobreHielo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 83</value>
+  </data>
+  <data name="rdoEmpaquetarSobreHielo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 19</value>
+  </data>
+  <data name="rdoEmpaquetarSobreHielo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="rdoEmpaquetarSobreHielo.Text" xml:space="preserve">
+    <value>Patin Sobre Hielo</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarSobreHielo.Name" xml:space="preserve">
+    <value>rdoEmpaquetarSobreHielo</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarSobreHielo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarSobreHielo.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarSobreHielo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rdoEmpaquetarFreeStyle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoEmpaquetarFreeStyle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rdoEmpaquetarFreeStyle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 58</value>
+  </data>
+  <data name="rdoEmpaquetarFreeStyle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 19</value>
+  </data>
+  <data name="rdoEmpaquetarFreeStyle.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rdoEmpaquetarFreeStyle.Text" xml:space="preserve">
+    <value>Patin FreeStyle</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarFreeStyle.Name" xml:space="preserve">
+    <value>rdoEmpaquetarFreeStyle</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarFreeStyle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarFreeStyle.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarFreeStyle.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rdoEmpaquetarArtistico.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdoEmpaquetarArtistico.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rdoEmpaquetarArtistico.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 33</value>
+  </data>
+  <data name="rdoEmpaquetarArtistico.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 19</value>
+  </data>
+  <data name="rdoEmpaquetarArtistico.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rdoEmpaquetarArtistico.Text" xml:space="preserve">
+    <value>Patin Artistico</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarArtistico.Name" xml:space="preserve">
+    <value>rdoEmpaquetarArtistico</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarArtistico.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarArtistico.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rdoEmpaquetarArtistico.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>451, 314</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 160</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Seleccione que patin desea empaquetar</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>668, 522</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>684, 561</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>684, 561</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FormCrearRollers</value>
+  </data>
+  <data name="&gt;&gt;Material.Name" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="&gt;&gt;Material.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Cantidad.Name" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="&gt;&gt;Cantidad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Fecha.Name" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="&gt;&gt;Fecha.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NumeroSerie.Name" xml:space="preserve">
+    <value>NumeroSerie</value>
+  </data>
+  <data name="&gt;&gt;NumeroSerie.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Modelo.Name" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="&gt;&gt;Modelo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ApellidoOperario.Name" xml:space="preserve">
+    <value>ApellidoOperario</value>
+  </data>
+  <data name="&gt;&gt;ApellidoOperario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CantidadTotalDeEmpaquetado.Name" xml:space="preserve">
+    <value>CantidadTotalDeEmpaquetado</value>
+  </data>
+  <data name="&gt;&gt;CantidadTotalDeEmpaquetado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormCrearRollers</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
