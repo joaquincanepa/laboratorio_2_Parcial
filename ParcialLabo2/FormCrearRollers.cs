@@ -23,6 +23,7 @@ namespace ParcialLabo2
             ActualizarDataGridView();
             dataGridStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewRollers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewEmpaquetado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnCrearRoller_Click(object sender, EventArgs e)

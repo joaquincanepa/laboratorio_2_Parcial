@@ -219,16 +219,12 @@
             return false;
         }
 
+
         /// <summary>
-        /// Empaqueta un roller del tipo especificado y crea un registro de roller empaquetado.
-        /// Si hay al menos un roller del tipo especificado en la lista de rollers disponibles, 
-        /// se toma el primero de la lista, se empaqueta y se crea un registro
+        /// Empaqueta rollers de un tipo específico y los agrega al inventario de rollers empaquetados.
         /// </summary>
-        /// <param name="tipo">El tipo de roller a empaquetar.</param>
-        /// <returns>
-        /// Devuelve "true" si se empaquetó con éxito un roller del tipo especificado y se creó el registro de roller empaquetado.
-        /// Devuelve "false" si no hay rollers del tipo especificado en la lista de rollers disponibles.
-        /// </returns>
+        /// <param name="tipo">El tipo de rollers que se desea empaquetar.</param>
+        /// <returns>True si se empaquetaron rollers del tipo especificado, de lo contrario, False.</returns>
         public static bool EmpaquetarRoller(string tipo)
         {
             bool retorno = false;
@@ -238,15 +234,15 @@
                 {
                     if (ListaDeRoller[i].Tipo.ToString() == tipo)
                     {
-                        Roller rollerConstruido = Sistema.ListaDeRoller[i];
-                        RollerEmpaquetado rollerEmpaquetado = new RollerEmpaquetado(DateTime.Now, Sistema.GenerarNumeroSerie(),/*Sistema.GenerarModeloSerie()*/tipo, UsuarioConectado.Apellido);
-                        listaDeRollerEmpaquetados.Add(rollerEmpaquetado);
-                        Sistema.ListaDeRoller.Remove(rollerConstruido);
+                        RollerEmpaquetado rollerEmpaquetado = new RollerEmpaquetado(DateTime.Now, Sistema.GenerarNumeroSerie(),/*Sistema.GenerarModeloSerie() */ tipo, UsuarioConectado.Apellido);
+                        Sistema.listaDeRollerEmpaquetados.Add(rollerEmpaquetado);
+                        Sistema.ListaDeRoller.Remove(ListaDeRoller[i]);
+                        i = i - 1;
                         retorno = true;
                     }
                 }
             }
-            return retorno ;
+            return retorno;
 
         }
         /// <summary>

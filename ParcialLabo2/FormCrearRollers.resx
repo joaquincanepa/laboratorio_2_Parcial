@@ -536,7 +536,7 @@
     <value>18</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Seleccione que patin desea empaquetar</value>
+    <value>Seleccione el tipo de patin que desea empaquietar</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
