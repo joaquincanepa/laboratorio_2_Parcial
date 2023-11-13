@@ -87,20 +87,26 @@ namespace ParcialLabo2
 
         private void btn_Empaquetar_Click(object sender, EventArgs e)
         {
-            if (Sistema.EmpaquetarRoller(tipoSeleccionadoParaEmpaquetar))
+            try
             {
-                MessageBox.Show("El roller ha sido empaquetado y agregado al inventario.");
-                MostrarRollersEmpaquetadosEnDataGridView();
-                ActualizarDataGridView();
-
+                if (Sistema.EmpaquetarRoller(tipoSeleccionadoParaEmpaquetar))
+                {
+                    MessageBox.Show("El roller ha sido empaquetado y agregado al inventario.");
+                    MostrarRollersEmpaquetadosEnDataGridView();
+                    ActualizarDataGridView();
+                }
+                else
+                {
+                    throw new ExcepcionPropia($"No tienes un Roller {tipoSeleccionadoParaEmpaquetar} construido para Empaquetar.");
+                }
             }
-            else
+            catch (ExcepcionPropia ex)
             {
-                MessageBox.Show("No tienes un Roller construido para Empaquetar.");
+                MessageBox.Show($"Error al intentar empaquetar el roller: {ex.Message}", "Error de Empaquetado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LogErrores.RegistrarError(ex.Message, typeof(FormCrearRollers).Name, nameof(btn_Empaquetar));
             }
 
         }
-
 
         private void MostrarRollersEmpaquetadosEnDataGridView()
         {

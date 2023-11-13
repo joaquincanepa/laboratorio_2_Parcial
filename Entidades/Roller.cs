@@ -23,19 +23,13 @@ namespace Entidades
             Tipo = tipo;
             NumeroSerie = numeroSerie;
         }
-
         public static bool operator ==(Roller nroSerie1, Roller nroSerie2)
         {
-
             return nroSerie1.NumeroSerie == nroSerie2.NumeroSerie;
         }
-
         public static bool operator !=(Roller nroSerie1, Roller nroSerie2)
         {
-
             return nroSerie1.NumeroSerie != nroSerie2.NumeroSerie;
         }
-
-
     }
 }

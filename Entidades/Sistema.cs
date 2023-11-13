@@ -1,4 +1,6 @@
-﻿namespace Entidades
+﻿using Entidades.SQL;
+
+namespace Entidades
 {
     public static class Sistema
     {
@@ -14,7 +16,6 @@
         public static List<Roller>ListaDeRoller = new List<Roller>();
         public static List<SkateEnsamblado> listaDeSkateEnsamblados = new List<SkateEnsamblado>();
         public static List<RollerEmpaquetado> listaDeRollerEmpaquetados= new List<RollerEmpaquetado>();
-
         static Sistema()
         {
             CargarUsuarios();
@@ -23,6 +24,8 @@
 
         private static void CargarUsuarios()
         {
+            List<Usuario> usuarios = Conexion.Leer();
+            ListaDeUsuarios.AddRange(usuarios);
             ListaDeUsuarios.Add(new Supervisor("supervisor", "Canepa", new DateTime(1999, 12, 04), "42175984", "@supervisor", "a", 1));
             ListaDeUsuarios.Add(new Operario("Joaquin","Gonzalez", DateTime.Now,"42175974","@operario","a",1 ));
             //ListaDeSkate.Add(new Skate(2,8,1,2));
@@ -125,6 +128,7 @@
 
             return true;
         }
+
         /// <summary>
         /// Valida si un número de DNI es un valor numérico de 8 dígitos.
         /// </summary>
@@ -191,7 +195,6 @@
                 ListaDeSkate.Add(nuevoSkate);
                 return true;
             }
-
             return false;
         }
 
@@ -208,17 +211,14 @@
         {
             if (Sistema.ListaDeSkate.Count > 0)
             {
-                
                 Skate skateConstruido = Sistema.ListaDeSkate[0];// Tomo el primer skate de la lista de ListaDeSkate
                 SkateEnsamblado skateEnsamblado = new SkateEnsamblado(DateTime.Now, Sistema.GenerarNumeroSerie(), "Modelo" + Sistema.GenerarModeloSerie());//Creouna instancia de SkateEnsamblado
                 listaDeSkateEnsamblados.Add(skateEnsamblado);
                 Sistema.ListaDeSkate.Remove(skateConstruido);
-                return true;
-               
+                return true;             
             }
             return false;
         }
-
 
         /// <summary>
         /// Empaqueta rollers de un tipo específico y los agrega al inventario de rollers empaquetados.
@@ -245,6 +245,7 @@
             return retorno;
 
         }
+
         /// <summary>
         /// Crea una cantidad específica de rollers del tipo especificado, descontando los materiales necesarios del control de stock.
         /// </summary>
@@ -304,7 +305,7 @@
                         }
                         return true;
                     }
-                        break;
+                     break;
             }
             return false;
         }
@@ -334,8 +335,5 @@
             }
             return 0;
         }
-
     }
-
-
 }

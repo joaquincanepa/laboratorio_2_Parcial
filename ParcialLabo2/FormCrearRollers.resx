@@ -232,6 +232,9 @@
   <data name="dataGridViewRollers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="dataGridViewRollers.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="dataGridViewRollers.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -291,6 +294,9 @@
   </data>
   <data name="dataGridStock.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="dataGridStock.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="dataGridStock.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -411,6 +417,9 @@
   </data>
   <data name="dataGridViewEmpaquetado.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
+  </data>
+  <data name="dataGridViewEmpaquetado.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="dataGridViewEmpaquetado.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 220</value>

@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Entidades.SQL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,21 +32,30 @@ namespace ParcialLabo2
                 string password = txtPasswordCrearUsuario.Text;
 
                 string error = Sistema.CrearUsuarioSupervisor(nombre, apellido, fechaNacimiento, dni, email, password);
+
                 if (error == null)
                 {
-                    Operario operario = new Operario(nombre, apellido, fechaNacimiento, dni, email, password, -1);
-                    Sistema.ListaDeUsuarios.Add(operario);
-                    MessageBox.Show("Usuario Operario creado correctamente.");
-                    Close();
+                    Operario operario = new Operario(nombre, apellido, fechaNacimiento, dni, email, password, -1,-1);
+                    if (Conexion.AgregarOperario(operario))
+                    {
+                        Sistema.ListaDeUsuarios.Add(operario);
+                        MessageBox.Show("Usuario Operario creado correctamente.");
+                        Close();
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Error al agregar el operario");
+                    }             
                 }
                 else
                 {
-                    MessageBox.Show(error);
+                    throw new Exception(error.ToString());
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error: " + ex.Message);
+                LogErrores.RegistrarError(ex.Message,typeof(FormCrearOperario).Name,nameof(btnCrearUsuarioOperario));
 
             }
 

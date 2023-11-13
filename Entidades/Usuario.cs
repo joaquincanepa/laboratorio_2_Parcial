@@ -16,15 +16,12 @@ namespace Entidades
         private string email;
         private string password;
         int idUsuario;
-
-
         public Usuario(string nombre, string apellido, DateTime fechaNacimiento, string dni, string email, string password, int idUsuario)
         {
             this.nombre = nombre;
             this.apellido = apellido;
             this.fechaNacimiento = fechaNacimiento;
             this.dni = dni;
-
             this.email = email;
             this.password = password;
             this.IdUsuario = idUsuario;
@@ -55,7 +52,6 @@ namespace Entidades
                 return false;
             }
         }
-
         public abstract string ObtenerTipoDeUsuario();//aplico polimosrfismo
     }
 }

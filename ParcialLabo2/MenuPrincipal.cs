@@ -56,8 +56,6 @@ namespace ParcialLabo2
             openChildForm(new FrmFotoMenuPrincipal());
         }
 
-
-
         private void btnCrearSkate_Click(object sender, EventArgs e)
         {
             openChildForm(new FormCrearSkate());
@@ -111,8 +109,7 @@ namespace ParcialLabo2
         {
             openChildForm(new FrmReponerStock());
         }
-
-        
+    
         private void btn_MostrarUsuarios_Click(object sender, EventArgs e)
         {
             openChildForm(new FormListaUsuarioscs());

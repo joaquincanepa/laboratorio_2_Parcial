@@ -12,8 +12,6 @@ namespace Entidades
         private int tornillos;
         private int madera;
         private int trucks;
-
-
         public Skate()
         {
         }

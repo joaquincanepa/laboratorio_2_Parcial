@@ -31,5 +31,10 @@ namespace CanepaJoaquinParcial
                 dataGridStock.Rows.Add(kvp.Key, kvp.Value);
             }
         }
+
+        private void btn_serializarStock_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

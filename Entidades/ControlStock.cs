@@ -10,9 +10,7 @@ namespace Entidades
     public class ControlStock
     {
         private static ControlStock instacia;
-        public Dictionary<string, int> StockMateriaPrima { get; private set; }
-        
-
+        public Dictionary<string, int> StockMateriaPrima { get; private set; }      
         public ControlStock()
         {
             StockMateriaPrima = new Dictionary<string, int>
@@ -35,9 +33,7 @@ namespace Entidades
                 { "Cuchilla", 100 },
             };
         }
-
-
-       
+   
         public bool DescontarMaterial(string material, int cantidad)
         {
             if (StockMateriaPrima.ContainsKey(material) && StockMateriaPrima[material] >= cantidad)
@@ -59,7 +55,6 @@ namespace Entidades
                 StockMateriaPrima.Add(material, cantidad);
             }
         }
-
         public static ControlStock GetInstance()
         {
             if (instacia == null)

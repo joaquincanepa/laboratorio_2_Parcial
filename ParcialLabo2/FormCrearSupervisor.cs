@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Entidades.SQL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,19 +33,24 @@ namespace ParcialLabo2
                 string error = Sistema.CrearUsuarioSupervisor(nombre, apellido, fechaNacimiento, dni, email, password);
                 if (error == null)
                 {
-                    Supervisor supervisor = new Supervisor(nombre, apellido, fechaNacimiento, dni, email, password, -1);
-                    Sistema.ListaDeUsuarios.Add(supervisor);
-                    MessageBox.Show("Usuario Supervisor creado correctamente.");
-                    Close();
+                    Supervisor supervisor = new Supervisor(nombre, apellido, fechaNacimiento, dni, email, password, -1, -1);
+                    if (Conexion.AgregarSupervisor(supervisor))
+                    {
+                        Sistema.ListaDeUsuarios.Add(supervisor);
+                        MessageBox.Show("Usuario Supervisor creado correctamente.");
+                        Close();
+                    }
+                   
                 }
                 else
                 {
-                    MessageBox.Show(error);
+                    throw new Exception(error.ToString());
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error: " + ex.Message);
+                LogErrores.RegistrarError(ex.Message, typeof(FormCrearSupervisor).Name, nameof(btnCrearUsuario));
             }
         }
 

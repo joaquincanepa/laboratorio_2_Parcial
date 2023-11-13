@@ -18,7 +18,7 @@ namespace ParcialLabo2
         {
             InitializeComponent();
             controlStock = ControlStock.GetInstance();
-            MostrarStockEnDataGridView(); 
+            MostrarStockEnDataGridView();
             MostrarSkatesEnsambladosEnDataGridView();
             MostrarSkatesEnDataGridView();
             dataGridStockCrearSkate.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;//acomodo las columnas
@@ -43,17 +43,25 @@ namespace ParcialLabo2
 
         private void btn_Ensamblado_Click(object sender, EventArgs e)
         {
-            if (Sistema.EnsamblarSkate())
+            try
             {
-                MessageBox.Show("El skate ha sido ensamblado y agregado al inventario.");
-                MostrarSkatesEnsambladosEnDataGridView();
-                MostrarSkatesEnDataGridView();
+                if (Sistema.EnsamblarSkate())
+                {
+                    MessageBox.Show("El skate ha sido ensamblado y agregado al inventario.");
+                    MostrarSkatesEnsambladosEnDataGridView();
+                    MostrarSkatesEnDataGridView();
+                }
+                else
+                {
+                    throw new ExcepcionPropia("No tienes un skate construido para ensamblar.");
+                }
             }
-            else
+            catch (ExcepcionPropia ex)
             {
-                MessageBox.Show("No tienes un skate construido para ensamblar.");
+                MessageBox.Show($"Error al intentar ensamblar el skate: {ex.Message}", "Error de Ensamblaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LogErrores.RegistrarError(ex.Message, typeof(FormCrearSkate).Name, nameof(btn_Ensamblado));
             }
-
+           
         }
 
         private void MostrarStockEnDataGridView()
