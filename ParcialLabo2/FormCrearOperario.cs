@@ -82,6 +82,18 @@ namespace ParcialLabo2
             }
         }
 
+        /// <summary>
+        /// Realiza la subida simulada de un usuario a través de una operación asíncrona.
+        /// </summary>
+        /// <param name="progress">Objeto que implementa la interfaz IProgress&lt;int&gt; para informar sobre el progreso.</param>
+        /// <param name="cancellationToken">Token de cancelación que permite solicitar la cancelación de la operación.</param>
+        /// <param name="nombre">Nombre del usuario a subir.</param>
+        /// <param name="apellido">Apellido del usuario a subir.</param>
+        /// <param name="fechaNacimiento">Fecha de nacimiento del usuario a subir.</param>
+        /// <param name="dni">Número de documento del usuario a subir.</param>
+        /// <param name="email">Dirección de correo electrónico del usuario a subir.</param>
+        /// <param name="password">Contraseña del usuario a subir.</param>
+        /// <returns>Una tarea que representa la operación asíncrona.</returns>
         private async Task SubirUsuarioAsync(IProgress<int> progress, CancellationToken cancellationToken, string nombre, string apellido, DateTime fechaNacimiento, string dni, string email, string password)
         {
             await Task.Run(() =>

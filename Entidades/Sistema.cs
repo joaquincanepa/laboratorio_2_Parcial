@@ -22,7 +22,7 @@ namespace Entidades
         {
             CargarUsuarios();
             controlStock = ControlStock.GetInstance(); // Obtener la instancia existente
-            serializableStock = new SerializableStock(); // Inicializar la instancia
+            serializableStock = controlStock.SerializableStock;
         }
 
         private static void CargarUsuarios()
@@ -31,7 +31,6 @@ namespace Entidades
             ListaDeUsuarios.AddRange(usuarios);
             ListaDeUsuarios.Add(new Supervisor("supervisor", "Canepa", new DateTime(1999, 12, 04), "42175984", "@supervisor", "a", 1));
             ListaDeUsuarios.Add(new Operario("Joaquin","Gonzalez", DateTime.Now,"42175974","@operario","a",1 ));
-            //ListaDeSkate.Add(new Skate(2,8,1,2));
         }
         /// <summary>
         /// Valida si un usuario y contraseña son válidos en la lista de usuarios del sistema.

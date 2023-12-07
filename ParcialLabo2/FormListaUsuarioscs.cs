@@ -77,7 +77,6 @@ namespace CanepaJoaquinParcial
                 List<Usuario> usuarios = Conexion.Leer();
                 // Configurar el origen de datos del DataGridView
                 dataGridViewListaUsuarios.DataSource = usuarios;
-                // Opcionalmente, puedes ajustar las propiedades de visualización del DataGridView
                 dataGridViewListaUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridViewListaUsuarios.Columns["Password"].Visible = false;
             }
@@ -115,17 +114,20 @@ namespace CanepaJoaquinParcial
             List<Usuario> usuarios = (List<Usuario>)dataGridViewListaUsuarios.DataSource;
             Sistema.OrdenarDeManeraAscendente(usuarios, (a, b) => string.Compare(((dynamic)a).Apellido.ToString(), ((dynamic)b).Apellido.ToString()));
             // Actualizo
+            dataGridViewListaUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewListaUsuarios.DataSource = null;
             dataGridViewListaUsuarios.DataSource = usuarios;
-
+            dataGridViewListaUsuarios.Columns["Password"].Visible = false;
         }
 
         private void btn_ordenarDescendente_Click(object sender, EventArgs e)
         {
             List<Usuario> usuarios = (List<Usuario>)dataGridViewListaUsuarios.DataSource;
             Sistema.OrdenarDeManeraDescendente(usuarios, (a, b) => string.Compare(((dynamic)a).Apellido.ToString(), ((dynamic)b).Apellido.ToString()));
+            dataGridViewListaUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewListaUsuarios.DataSource = null;
             dataGridViewListaUsuarios.DataSource = usuarios;
+            dataGridViewListaUsuarios.Columns["Password"].Visible = false;
         }
 
         private void dataGridViewListaUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)

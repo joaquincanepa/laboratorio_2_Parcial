@@ -29,7 +29,7 @@ namespace Entidades
         private static ControlStock instacia;
         public SerializableStock SerializableStock { get; private set; }//para la serializacion
         public Dictionary<string, int> StockMateriaPrima { get; private set; }      
-        public ControlStock()
+        private ControlStock()
         {
             SerializableStock = new SerializableStock();//para la serializacion
             /*StockMateriaPrima = new Dictionary<string, int>
