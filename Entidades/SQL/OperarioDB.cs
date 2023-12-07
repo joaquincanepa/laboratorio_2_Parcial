@@ -18,6 +18,11 @@ namespace Entidades.SQL
             _connection = connection;
         }
 
+        /// <summary>
+        /// Agrega un nuevo operario a la base de datos.
+        /// </summary>
+        /// <param name="objeto">Operario a agregar.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
         public bool Agregar(Operario objeto)
         {
             try
@@ -39,6 +44,12 @@ namespace Entidades.SQL
             }
         }
 
+        /// <summary>
+        /// Borra un operario de la base de datos.
+        /// </summary>
+        /// <param name="id">ID del operario a borrar.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
+        /// <exception cref="Exception">Se produce cuando ocurre un error al borrar el operario.</exception>
         public bool Borrar(int id)
         {
             try
@@ -74,6 +85,11 @@ namespace Entidades.SQL
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Obtiene la lista de operarios desde la base de datos.
+        /// </summary>
+        /// <returns>Lista de operarios.</returns>
+        /// <exception cref="Exception">Se produce cuando ocurre un error al obtener los operarios.</exception>
         public List<Operario> Traer()
         {
             var operario = new List<Operario>();
@@ -107,6 +123,12 @@ namespace Entidades.SQL
             return operario;
         }
 
+        /// <summary>
+        /// Elimina un usuario de la base de datos.
+        /// </summary>
+        /// <param name="idUsuario">ID del usuario a eliminar.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
+        /// <exception cref="Exception">Se produce cuando ocurre un error al eliminar el usuario.</exception>
         private bool EliminarUsuario(int idUsuario)
         {
             try

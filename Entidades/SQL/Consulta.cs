@@ -12,12 +12,22 @@ namespace Entidades.SQL
     public class Consulta : ConexionGN
     {
         private static SqlCommand _command;
+
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase <see cref="Consulta"/>.
+        /// </summary>
+        /// <param name="_connection">Cadena de conexión a la base de datos.</param>
         public Consulta(string _connection) : base(_connection)// string de conexion 
         {
             _command = new SqlCommand();
             _command.CommandType = CommandType.Text;
         }
 
+        /// <summary>
+        /// Ejecuta una consulta SQL y devuelve el resultado como un DataTable.
+        /// </summary>
+        /// <param name="query">Consulta SQL.</param>
+        /// <returns>DataTable con los resultados de la consulta.</returns>
         protected DataTable EjecutarQuery(string query)
         {
             try
@@ -47,6 +57,11 @@ namespace Entidades.SQL
 
         }
 
+        /// <summary>
+        /// Ejecuta una consulta SQL que no devuelve datos y devuelve el número de filas afectadas.
+        /// </summary>
+        /// <param name="query">Consulta SQL.</param>
+        /// <returns>Número de filas afectadas.</returns>
         protected int? EjecutarNonQuery(string query)
         {
             try
@@ -69,6 +84,12 @@ namespace Entidades.SQL
 
         }
 
+        /// <summary>
+        /// Ejecuta una consulta SQL con parámetros y devuelve el número de filas afectadas.
+        /// </summary>
+        /// <param name="query">Consulta SQL.</param>
+        /// <param name="parameters">Parámetros a agregar a la consulta.</param>
+        /// <returns>Número de filas afectadas.</returns>
         protected int? EjecutarNonQuery(string query, params SqlParameter[] parameters)
         {
             try

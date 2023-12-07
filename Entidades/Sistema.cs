@@ -339,7 +339,14 @@ namespace Entidades
             return 0;
         }
 
-
+        /// <summary>
+        /// Modifica los datos personales del usuario conectado.
+        /// </summary>
+        /// <param name="nombre">Nuevo nombre del usuario.</param>
+        /// <param name="apellido">Nuevo apellido del usuario.</param>
+        /// <param name="fechaNacimiento">Nueva fecha de nacimiento del usuario.</param>
+        /// <param name="documento">Nuevo documento (DNI) del usuario.</param>
+        /// <param name="email">Nuevo correo electrónico del usuario.</param>
         public static void ModificarDatosPersonales(string nombre, string apellido, DateTime fechaNacimiento, string documento, string email)
         {
             // Obtener el usuario conectado

@@ -17,6 +17,14 @@ namespace Entidades.SQL
         {
             _connection = connection;
         }
+
+
+        /// <summary>
+        /// Agrega un nuevo supervisor a la base de datos.
+        /// </summary>
+        /// <param name="objeto">Supervisor a agregar.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
+        /// <exception cref="Exception">Se produce cuando ocurre un error al agregar el supervisor.</exception>
         public bool Agregar(Supervisor objeto)
         {
             try
@@ -39,6 +47,12 @@ namespace Entidades.SQL
             }
         }
 
+        /// <summary>
+        /// Borra un supervisor de la base de datos.
+        /// </summary>
+        /// <param name="id">ID del supervisor a borrar.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
+        /// <exception cref="Exception">Se produce cuando ocurre un error al borrar el supervisor.</exception>
         public bool Borrar(int id)
         {
 
@@ -77,6 +91,11 @@ namespace Entidades.SQL
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Obtiene la lista de supervisores desde la base de datos.
+        /// </summary>
+        /// <returns>Lista de supervisores.</returns>
+        /// <exception cref="Exception">Se produce cuando ocurre un error al obtener los supervisores.</exception>
         public List<Supervisor> Traer()
         {
             var supervisor = new List<Supervisor>();
@@ -109,6 +128,12 @@ namespace Entidades.SQL
         }
 
 
+        /// <summary>
+        /// Elimina un usuario de la base de datos.
+        /// </summary>
+        /// <param name="idUsuario">ID del usuario a eliminar.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
+        /// <exception cref="Exception">Se produce cuando ocurre un error al eliminar el usuario.</exception>
         private bool EliminarUsuario(int idUsuario)
         {
             try

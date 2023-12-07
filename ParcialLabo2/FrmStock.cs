@@ -72,6 +72,11 @@ namespace ParcialLabo2
             ActualizarCantidadMaterialEnDataGrid("Cierre");
 
         }
+
+        /// <summary>
+        /// Actualiza la cantidad de un material en un DataGridView.
+        /// </summary>
+        /// <param name="material">El material cuya cantidad se actualizará.</param>
         private void ActualizarCantidadMaterialEnDataGrid(string material)
         {
             foreach (DataGridViewRow row in dataGrid_Stock.Rows)

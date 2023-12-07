@@ -51,6 +51,9 @@ namespace CanepaJoaquinParcial
                 {
                     MessageBox.Show("Error al serializar ControlStock");
                 }
+
+                // Guardar el stock actual en el archivo XML
+                controlStock.GuardarStockEnXml();
             }
             catch (Exception ex)
             {

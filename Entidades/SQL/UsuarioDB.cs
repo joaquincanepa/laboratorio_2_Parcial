@@ -28,6 +28,12 @@ namespace Entidades.SQL
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Edita los datos de un usuario en la base de datos.
+        /// </summary>
+        /// <param name="objeto">Usuario con los datos actualizados.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
+        /// <exception cref="Exception">Se produce cuando ocurre un error al editar el usuario.</exception>
         public bool Editar(Usuario objeto)
         {
             try
@@ -62,52 +68,7 @@ namespace Entidades.SQL
 
         public List<Usuario> Traer()
         {
-            List<Usuario> usuarios = new List<Usuario>();
-
-            try
-            {
-                Conectar();
-
-                string query = "SELECT * FROM Usuario";
-                DataTable dataTable = EjecutarQuery(query);
-
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    int idUsuario = Convert.ToInt32(row["IdUsuario"]);
-                    string nombre = row["Nombre"].ToString();
-                    string apellido = row["Apellido"].ToString();
-                    DateTime fechaNacimiento = Convert.ToDateTime(row["FechaNacimiento"]);
-                    string dni = row["DNI"].ToString();
-                    string email = row["Email"].ToString();
-                    string password = row["Password"].ToString();
-
-                    // aca determino el tipo de usuario según la estructura de la base de datos
-                    // y creo la instancia correspondiente de la subclase de Usuario
-                    Usuario usuario = null;
-                    if (row["TipoUsuario"].ToString() == "Operario")
-                    {
-                        usuario = new Operario(nombre, apellido, fechaNacimiento, dni, email, password,idUsuario);
-                    }
-                    else if (row["TipoUsuario"].ToString() == "Supervisor")
-                    {       
-                        usuario = new Supervisor(nombre, apellido, fechaNacimiento, dni, email, password,idUsuario);
-                    }
-                    if (usuario != null)
-                    {
-                        usuarios.Add(usuario);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error al obtener los usuarios:: {ex.Message}");
-            }
-            finally
-            {
-                Cerrar();
-            }
-
-            return usuarios;
+            throw new NotImplementedException();
         }
     }
 }

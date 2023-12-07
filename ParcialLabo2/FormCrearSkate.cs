@@ -19,6 +19,7 @@ namespace ParcialLabo2
         {
             InitializeComponent();
             controlStock = ControlStock.GetInstance();
+            controlStock.CargarStockDesdeXml();
             MostrarStockEnDataGridView();
             MostrarSkatesEnsambladosEnDataGridView();
             MostrarSkatesEnDataGridView();
@@ -41,7 +42,10 @@ namespace ParcialLabo2
             }
         }
 
-
+        /// <summary>
+        /// Ensambla un skate de forma asíncrona.
+        /// </summary>
+        /// <returns>Una tarea que representa la operación de ensamblaje.</returns>
         private async Task EnsamblarSkate()
         {
             await Task.Delay(3000);
@@ -66,10 +70,10 @@ namespace ParcialLabo2
                 }
                 else
                 {
-                    throw new ExcepcionPropia("No tienes un skate construido para ensamblar.");
+                    throw new NoExisteParaEmpaquetarOEnsamblar("No tienes un skate construido para ensamblar.");
                 }
             }
-            catch (ExcepcionPropia ex)
+            catch (NoExisteParaEmpaquetarOEnsamblar ex)
             {
                 MessageBox.Show($"Error al intentar ensamblar el skate: {ex.Message}", "Error de Ensamblaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LogErrores.RegistrarError(ex.Message, typeof(FormCrearSkate).Name, nameof(btn_Ensamblado));
@@ -78,7 +82,9 @@ namespace ParcialLabo2
         }
 
 
-
+        /// <summary>
+        /// Muestra el stock en un DataGridView.
+        /// </summary>
         private void MostrarStockEnDataGridView()
         {
             dataGridStockCrearSkate.Rows.Clear();
@@ -89,13 +95,18 @@ namespace ParcialLabo2
             }
         }
 
-
+        /// <summary>
+        /// Muestra la cantidad total de skates listos para ensamblar en el DataGridView.
+        /// </summary>
         private void MostrarSkatesEnDataGridView()
         {
             dataGridViewListaSkate.Rows.Clear();
             dataGridViewListaSkate.Rows.Add("Cantidad Total de Skates Listos para ensamblar:", Sistema.ListaDeSkate.Count);
         }
 
+        /// <summary>
+        /// Muestra los skates ensamblados en un DataGridView, incluyendo la cantidad total de skates ensamblados.
+        /// </summary>
         private void MostrarSkatesEnsambladosEnDataGridView()
         {
             if (dataGridViewEnsamblado != null)

@@ -20,6 +20,7 @@ namespace ParcialLabo2
         {
             InitializeComponent();
             controlStock = ControlStock.GetInstance();
+            controlStock.CargarStockDesdeXml();
             MostrarStockEnDataGridView();
             ActualizarDataGridView();
             dataGridStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -71,12 +72,18 @@ namespace ParcialLabo2
                 MessageBox.Show("Por favor, elija un tipo de Roller.");
             }
         }
+        /// <summary>
+        /// Actualiza el DataGridView con la lista de rollers.
+        /// </summary>
         private void ActualizarDataGridView()
         {
             dataGridViewRollers.DataSource = null;
             dataGridViewRollers.DataSource = Sistema.ListaDeRoller;
         }
 
+        /// <summary>
+        /// Muestra el stock de materia prima en el DataGridView.
+        /// </summary>
         private void MostrarStockEnDataGridView()
         {
             dataGridStock.Rows.Clear();
@@ -87,6 +94,11 @@ namespace ParcialLabo2
             }
         }
 
+        /// <summary>
+        /// Maneja el evento de hacer clic en el botón para empaquetar un roller.
+        /// </summary>
+        /// <param name="sender">Objeto que envía el evento.</param>
+        /// <param name="e">Argumentos del evento.</param>
         private async void btn_Empaquetar_Click(object sender, EventArgs e)
         {
             try
@@ -104,10 +116,10 @@ namespace ParcialLabo2
                 }
                 else
                 {
-                    throw new ExcepcionPropia($"No tienes un Roller {tipoSeleccionadoParaEmpaquetar} construido para Empaquetar.");
+                    throw new NoExisteParaEmpaquetarOEnsamblar($"No tienes un Roller {tipoSeleccionadoParaEmpaquetar} construido para Empaquetar.");
                 }
             }
-            catch (ExcepcionPropia ex)
+            catch (NoExisteParaEmpaquetarOEnsamblar ex)
             {
                 MessageBox.Show($"Error al intentar empaquetar el roller: {ex.Message}", "Error de Empaquetado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LogErrores.RegistrarError(ex.Message, typeof(FormCrearRollers).Name, nameof(btn_Empaquetar));
@@ -115,12 +127,19 @@ namespace ParcialLabo2
 
         }
 
+        /// <summary>
+        /// Realiza la tarea de ensamblar un roller de forma asíncrona.
+        /// </summary>
+        /// <returns>Tarea que representa la operación de ensamblar un roller.</returns>
         private async Task EnsamblarRoller()
         {
             await Task.Delay(3000);
             Eventos.Invoke(Sistema.EmpaquetarRoller(tipoSeleccionadoParaEmpaquetar).ToString(), (int)numericUpDownCantidad.Value);
         }
 
+        /// <summary>
+        /// Muestra los rollers empaquetados en el DataGridView.
+        /// </summary
         private void MostrarRollersEmpaquetadosEnDataGridView()
         {
             dataGridViewEmpaquetado.Rows.Clear();

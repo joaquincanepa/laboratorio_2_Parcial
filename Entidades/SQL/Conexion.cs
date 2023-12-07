@@ -25,7 +25,7 @@ namespace Entidades.SQL
 
         static Conexion()
         {
-
+            
             _connectionString = "server=DESKTOP-QNA3LF7\\SQLEXPRESS; dataBase=BaseDeDatosFabrica; integrated security=true;";
             _connection = new SqlConnection(_connectionString);
             _command = _connection.CreateCommand();
@@ -36,7 +36,10 @@ namespace Entidades.SQL
 
         }
 
-
+        /// <summary>
+        /// Lee y devuelve la lista de usuarios (Operarios y Supervisores) desde la base de datos.
+        /// </summary>
+        /// <returns>Lista de usuarios.</returns>
         public static List<Usuario> Leer()
         {
             List<Usuario> listUsuario = new List<Usuario>();
@@ -56,8 +59,11 @@ namespace Entidades.SQL
             }
         }
 
-       
-
+        /// <summary>
+        /// Agrega un operario a la base de datos.
+        /// </summary>
+        /// <param name="objeto">Operario a agregar.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
         public static bool AgregarOperario(Operario objeto)
         {
             try
@@ -70,6 +76,12 @@ namespace Entidades.SQL
             }
         }
 
+
+        /// <summary>
+        /// Agrega un supervisor a la base de datos.
+        /// </summary>
+        /// <param name="objeto">Supervisor a agregar.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
         public static bool AgregarSupervisor(Supervisor objeto)
         {
             try
@@ -82,8 +94,12 @@ namespace Entidades.SQL
             }
         }
 
-        
 
+        /// <summary>
+        /// Borra un operario de la base de datos.
+        /// </summary>
+        /// <param name="operarioId">ID del operario a borrar.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
         public static bool BorrarOperario(int operarioId)
         {
             try
@@ -96,6 +112,11 @@ namespace Entidades.SQL
             }
         }
 
+        /// <summary>
+        /// Borra un supervisor de la base de datos.
+        /// </summary>
+        /// <param name="supervisorId">ID del supervisor a borrar.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
         public static bool BorrarSupervisor(int supervisorId)
         {
             try
@@ -108,7 +129,11 @@ namespace Entidades.SQL
             }
         }
 
-
+        /// <summary>
+        /// Edita los datos de un usuario en la base de datos.
+        /// </summary>
+        /// <param name="usuario">Usuario con los datos actualizados.</param>
+        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
         public static bool EditarUsuario(Usuario usuario)
         {
             try
