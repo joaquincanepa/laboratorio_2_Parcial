@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xceed.Wpf.Toolkit;
+
 
 namespace Entidades.SQL
 {
@@ -52,8 +52,7 @@ namespace Entidades.SQL
             }
             catch (Exception ex)
             {
-                //MessageBox.Show($"Error al agregar el turno: {ex.Message}");
-                return false;
+                throw new Exception($"Error al editar el Usuario: {ex.Message}");
             }
             finally
             {
@@ -82,8 +81,8 @@ namespace Entidades.SQL
                     string email = row["Email"].ToString();
                     string password = row["Password"].ToString();
 
-                    // Aquí debes determinar el tipo de usuario según la estructura de tu base de datos
-                    // y crear la instancia correspondiente de la subclase de Usuario
+                    // aca determino el tipo de usuario según la estructura de la base de datos
+                    // y creo la instancia correspondiente de la subclase de Usuario
                     Usuario usuario = null;
                     if (row["TipoUsuario"].ToString() == "Operario")
                     {
@@ -101,8 +100,7 @@ namespace Entidades.SQL
             }
             catch (Exception ex)
             {
-                // Manejar la excepción si ocurrió algún error en la consulta o conexión
-                Console.WriteLine("Error al obtener los usuarios: " + ex.Message);
+                throw new Exception($"Error al obtener los usuarios:: {ex.Message}");
             }
             finally
             {
@@ -110,11 +108,6 @@ namespace Entidades.SQL
             }
 
             return usuarios;
-        }
-
-        public List<Usuario> Traer(int id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

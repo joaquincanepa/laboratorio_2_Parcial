@@ -1,12 +1,11 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xceed.Wpf.Toolkit;
+using System.Windows;
 
 namespace Entidades.SQL
 {
@@ -30,14 +29,12 @@ namespace Entidades.SQL
                             $"SELECT CAST(scope_identity() AS int);";
 
                 var usuarioid = EjecutarNonQuery(query1);
-
                 var query2 = $"INSERT INTO Operario (idUsuario) VALUES ('{usuarioid}')";
                 var operarioId = EjecutarNonQuery(query2);
                 return true;
             }
             catch (Exception ex)
             {
-                //MessageBox.Show($"Error al agregar el operario: {ex.Message}");
                 return false;
             }
         }
@@ -46,7 +43,6 @@ namespace Entidades.SQL
         {
             try
             {
-                Conexion.BorrarOperario(id);
                 // Obtener el ID del usuario asociado al operario
                 string query1 = $"SELECT idUsuario FROM Operario WHERE operarioId = {id}";
                 int idUsuario;
@@ -69,8 +65,7 @@ namespace Entidades.SQL
             }
             catch (Exception ex)
             {
-                //MessageBox.Show($"Error al borrar el operario: {ex.Message}");
-                return false;
+                throw new Exception("Error al borrar el operario");
             }
         }
 
@@ -97,26 +92,20 @@ namespace Entidades.SQL
                 var UsuarioId = Convert.ToInt32(item["idUsuario"]);
 
                 DateTime fechaNacimiento;
-                if (DateTime.TryParse(fechaNacimientoStr, out fechaNacimiento))
+                try
                 {
-                    operario.Add(new Operario(nombre, apellido, fechaNacimiento, dni, email, password, operarioId, UsuarioId));
+                    if (DateTime.TryParse(fechaNacimientoStr, out fechaNacimiento))
+                    {
+                        operario.Add(new Operario(nombre, apellido, fechaNacimiento, dni, email, password, operarioId, UsuarioId));
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    //MessageBox.Show("Error en traer los operarios");
+                    throw new Exception($"Error al traer los usuario: {ex.Message}");
                 }
             }
-
             return operario;
         }
-
-
-        List<Operario> IModificlable<Operario>.Traer(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-
 
         private bool EliminarUsuario(int idUsuario)
         {
@@ -128,8 +117,7 @@ namespace Entidades.SQL
             }
             catch (Exception ex)
             {
-               // MessageBox.Show($"Error al eliminar el usuario: {ex.Message}");
-                return false;
+                throw new Exception($"Error al eliminar el usuario: {ex.Message}");
             }
         }
     }

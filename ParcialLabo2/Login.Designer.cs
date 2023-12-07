@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
+            lblHora = new Label();
             pictureBox1 = new PictureBox();
             btnHarcodeo = new Button();
             txt_usuario = new TextBox();
@@ -41,6 +43,7 @@
             btn_cancelar = new Button();
             btnCrearUsuario = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            Temporizador = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_cerrar).BeginInit();
@@ -50,6 +53,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(11, 7, 17);
+            panel1.Controls.Add(lblHora);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnHarcodeo);
             panel1.Dock = DockStyle.Left;
@@ -58,6 +62,18 @@
             panel1.Size = new Size(250, 428);
             panel1.TabIndex = 3;
             panel1.Paint += panel1_Paint;
+            // 
+            // lblHora
+            // 
+            lblHora.AutoSize = true;
+            lblHora.BackColor = Color.Transparent;
+            lblHora.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHora.ForeColor = SystemColors.Control;
+            lblHora.Location = new Point(41, 305);
+            lblHora.Name = "lblHora";
+            lblHora.Size = new Size(125, 40);
+            lblHora.TabIndex = 11;
+            lblHora.Text = "00:00:00";
             // 
             // pictureBox1
             // 
@@ -201,6 +217,12 @@
             btnCrearUsuario.UseVisualStyleBackColor = false;
             btnCrearUsuario.Click += btnCrearUsuario_Click;
             // 
+            // Temporizador
+            // 
+            Temporizador.Enabled = true;
+            Temporizador.Interval = 1000;
+            Temporizador.Tick += Temporizador_Tick;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -223,6 +245,7 @@
             FormClosing += Login_FormClosing;
             Load += Login_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_cerrar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_minimizar).EndInit();
@@ -244,5 +267,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button btnHarcodeo;
         private PictureBox pictureBox1;
+        private Label lblHora;
+        private System.Windows.Forms.Timer Temporizador;
     }
 }

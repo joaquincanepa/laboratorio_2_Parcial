@@ -65,7 +65,7 @@
             dataGridStockCrearSkate.Name = "dataGridStockCrearSkate";
             dataGridStockCrearSkate.ReadOnly = true;
             dataGridStockCrearSkate.RowTemplate.Height = 25;
-            dataGridStockCrearSkate.Size = new Size(668, 109);
+            dataGridStockCrearSkate.Size = new Size(818, 109);
             dataGridStockCrearSkate.TabIndex = 1;
             dataGridStockCrearSkate.CellContentClick += dataGridStockCrearSkate_CellContentClick;
             // 
@@ -87,7 +87,7 @@
             pnl_FondoCrearSkate.Dock = DockStyle.Top;
             pnl_FondoCrearSkate.Location = new Point(0, 0);
             pnl_FondoCrearSkate.Name = "pnl_FondoCrearSkate";
-            pnl_FondoCrearSkate.Size = new Size(668, 109);
+            pnl_FondoCrearSkate.Size = new Size(818, 109);
             pnl_FondoCrearSkate.TabIndex = 2;
             // 
             // btnCrearSkate
@@ -99,7 +99,7 @@
             btnCrearSkate.FlatStyle = FlatStyle.Flat;
             btnCrearSkate.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnCrearSkate.ForeColor = Color.White;
-            btnCrearSkate.Location = new Point(43, 400);
+            btnCrearSkate.Location = new Point(41, 475);
             btnCrearSkate.Name = "btnCrearSkate";
             btnCrearSkate.Padding = new Padding(10, 0, 0, 0);
             btnCrearSkate.Size = new Size(227, 54);
@@ -117,7 +117,7 @@
             btn_Ensamblado.FlatStyle = FlatStyle.Flat;
             btn_Ensamblado.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Ensamblado.ForeColor = Color.White;
-            btn_Ensamblado.Location = new Point(340, 400);
+            btn_Ensamblado.Location = new Point(442, 475);
             btn_Ensamblado.Name = "btn_Ensamblado";
             btn_Ensamblado.Padding = new Padding(10, 0, 0, 0);
             btn_Ensamblado.Size = new Size(243, 54);
@@ -133,7 +133,7 @@
             pnl_ContenedorDataGridSkate.Dock = DockStyle.Top;
             pnl_ContenedorDataGridSkate.Location = new Point(0, 109);
             pnl_ContenedorDataGridSkate.Name = "pnl_ContenedorDataGridSkate";
-            pnl_ContenedorDataGridSkate.Size = new Size(668, 111);
+            pnl_ContenedorDataGridSkate.Size = new Size(818, 111);
             pnl_ContenedorDataGridSkate.TabIndex = 8;
             // 
             // dataGridViewListaSkate
@@ -147,7 +147,7 @@
             dataGridViewListaSkate.Location = new Point(0, 0);
             dataGridViewListaSkate.Name = "dataGridViewListaSkate";
             dataGridViewListaSkate.RowTemplate.Height = 25;
-            dataGridViewListaSkate.Size = new Size(668, 111);
+            dataGridViewListaSkate.Size = new Size(818, 111);
             dataGridViewListaSkate.TabIndex = 0;
             // 
             // CantidadDeSkatesCreados
@@ -168,7 +168,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 220);
             panel2.Name = "panel2";
-            panel2.Size = new Size(668, 114);
+            panel2.Size = new Size(818, 114);
             panel2.TabIndex = 9;
             // 
             // dataGridViewEnsamblado
@@ -181,7 +181,7 @@
             dataGridViewEnsamblado.Location = new Point(0, 0);
             dataGridViewEnsamblado.Name = "dataGridViewEnsamblado";
             dataGridViewEnsamblado.RowTemplate.Height = 25;
-            dataGridViewEnsamblado.Size = new Size(668, 114);
+            dataGridViewEnsamblado.Size = new Size(818, 114);
             dataGridViewEnsamblado.TabIndex = 0;
             // 
             // Fecha
@@ -213,16 +213,17 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 7, 17);
-            ClientSize = new Size(668, 522);
+            ClientSize = new Size(818, 622);
             Controls.Add(panel2);
             Controls.Add(pnl_ContenedorDataGridSkate);
             Controls.Add(btn_Ensamblado);
             Controls.Add(btnCrearSkate);
             Controls.Add(pnl_FondoCrearSkate);
-            MaximumSize = new Size(684, 561);
-            MinimumSize = new Size(684, 561);
+            MaximumSize = new Size(834, 661);
+            MinimumSize = new Size(834, 661);
             Name = "FormCrearSkate";
             Text = "FormCrearSkate";
+            FormClosing += FormCrearSkate_FormClosing_1;
             ((System.ComponentModel.ISupportInitialize)dataGridStockCrearSkate).EndInit();
             pnl_FondoCrearSkate.ResumeLayout(false);
             pnl_ContenedorDataGridSkate.ResumeLayout(false);

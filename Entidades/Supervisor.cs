@@ -22,6 +22,12 @@ namespace Entidades
         {
             this.SupervisorId = supervisorId;
         }
+
+        public Supervisor() : base("", "", DateTime.Now, "", "", "", -1)
+        {
+            //para serializar
+        }
+
         public int SupervisorId { get => supervisorId; set => supervisorId = value; }
         public override string ObtenerTipoDeUsuario()//polimorfismo/herencia
         {

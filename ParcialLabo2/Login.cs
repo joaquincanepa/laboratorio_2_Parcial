@@ -1,5 +1,6 @@
 using ParcialLabo2;
 using Entidades;
+using System;
 
 namespace TrabajoPracticoIntegrador
 {
@@ -123,6 +124,11 @@ namespace TrabajoPracticoIntegrador
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Temporizador_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }

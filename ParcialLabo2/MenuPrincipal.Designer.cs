@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             pnl_Menu_Lateral = new Panel();
+            btn_misDatos = new Button();
             btn_MostrarUsuarios = new Button();
             pnl_Stock = new Panel();
             btn_ReponerStock = new Button();
@@ -42,6 +43,7 @@
             pictureBox1 = new PictureBox();
             pnl_MenuPrincipal = new Panel();
             pictureBox2 = new PictureBox();
+            btn_tamanioFuente = new Button();
             pnl_Menu_Lateral.SuspendLayout();
             pnl_Stock.SuspendLayout();
             pnl_logo.SuspendLayout();
@@ -55,6 +57,8 @@
             // 
             pnl_Menu_Lateral.AutoScroll = true;
             pnl_Menu_Lateral.BackColor = Color.FromArgb(11, 7, 17);
+            pnl_Menu_Lateral.Controls.Add(btn_tamanioFuente);
+            pnl_Menu_Lateral.Controls.Add(btn_misDatos);
             pnl_Menu_Lateral.Controls.Add(btn_MostrarUsuarios);
             pnl_Menu_Lateral.Controls.Add(pnl_Stock);
             pnl_Menu_Lateral.Controls.Add(btnStock);
@@ -66,8 +70,24 @@
             pnl_Menu_Lateral.ForeColor = Color.Black;
             pnl_Menu_Lateral.Location = new Point(0, 0);
             pnl_Menu_Lateral.Name = "pnl_Menu_Lateral";
-            pnl_Menu_Lateral.Size = new Size(250, 561);
+            pnl_Menu_Lateral.Size = new Size(250, 661);
             pnl_Menu_Lateral.TabIndex = 0;
+            // 
+            // btn_misDatos
+            // 
+            btn_misDatos.Dock = DockStyle.Top;
+            btn_misDatos.FlatAppearance.BorderSize = 0;
+            btn_misDatos.FlatStyle = FlatStyle.Flat;
+            btn_misDatos.ForeColor = Color.Gainsboro;
+            btn_misDatos.Location = new Point(0, 372);
+            btn_misDatos.Name = "btn_misDatos";
+            btn_misDatos.Padding = new Padding(10, 0, 0, 0);
+            btn_misDatos.Size = new Size(250, 45);
+            btn_misDatos.TabIndex = 14;
+            btn_misDatos.Text = "Mis Datos";
+            btn_misDatos.TextAlign = ContentAlignment.MiddleLeft;
+            btn_misDatos.UseVisualStyleBackColor = true;
+            btn_misDatos.Click += btn_misDatos_Click;
             // 
             // btn_MostrarUsuarios
             // 
@@ -211,7 +231,7 @@
             pnl_MenuPrincipal.Dock = DockStyle.Fill;
             pnl_MenuPrincipal.Location = new Point(250, 0);
             pnl_MenuPrincipal.Name = "pnl_MenuPrincipal";
-            pnl_MenuPrincipal.Size = new Size(684, 561);
+            pnl_MenuPrincipal.Size = new Size(834, 661);
             pnl_MenuPrincipal.TabIndex = 2;
             // 
             // pictureBox2
@@ -220,21 +240,37 @@
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(684, 561);
+            pictureBox2.Size = new Size(834, 661);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
+            // 
+            // btn_tamanioFuente
+            // 
+            btn_tamanioFuente.Dock = DockStyle.Top;
+            btn_tamanioFuente.FlatAppearance.BorderSize = 0;
+            btn_tamanioFuente.FlatStyle = FlatStyle.Flat;
+            btn_tamanioFuente.ForeColor = Color.Gainsboro;
+            btn_tamanioFuente.Location = new Point(0, 417);
+            btn_tamanioFuente.Name = "btn_tamanioFuente";
+            btn_tamanioFuente.Padding = new Padding(10, 0, 0, 0);
+            btn_tamanioFuente.Size = new Size(250, 45);
+            btn_tamanioFuente.TabIndex = 15;
+            btn_tamanioFuente.Text = "Editar Tamaño de fuente";
+            btn_tamanioFuente.TextAlign = ContentAlignment.MiddleLeft;
+            btn_tamanioFuente.UseVisualStyleBackColor = true;
+            btn_tamanioFuente.Click += btn_tamanioFuente_Click;
             // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(934, 561);
+            ClientSize = new Size(1084, 661);
             Controls.Add(pnl_MenuPrincipal);
             Controls.Add(pnl_Menu_Lateral);
             Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            MaximumSize = new Size(950, 600);
-            MinimumSize = new Size(950, 600);
+            MaximumSize = new Size(1100, 700);
+            MinimumSize = new Size(1100, 700);
             Name = "MenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MenuPrincipal";
@@ -263,5 +299,7 @@
         private PictureBox pictureBox2;
         private Button btn_ReponerStock;
         private Button btn_MostrarUsuarios;
+        private Button btn_misDatos;
+        private Button btn_tamanioFuente;
     }
 }

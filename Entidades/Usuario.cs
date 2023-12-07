@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
+    [Serializable]
+    [XmlInclude(typeof(Operario))] // Agrega esta línea para incluir Operario en la serialización
+    [XmlInclude(typeof(Supervisor))]
     public abstract class Usuario//aplico polimorfismo a traves de abstract
                                  //ya q no instancio un usuario en si
     {

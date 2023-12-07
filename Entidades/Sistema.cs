@@ -1,5 +1,6 @@
 ﻿using Entidades.SQL;
 
+
 namespace Entidades
 {
     public static class Sistema
@@ -16,10 +17,12 @@ namespace Entidades
         public static List<Roller>ListaDeRoller = new List<Roller>();
         public static List<SkateEnsamblado> listaDeSkateEnsamblados = new List<SkateEnsamblado>();
         public static List<RollerEmpaquetado> listaDeRollerEmpaquetados= new List<RollerEmpaquetado>();
+        public static SerializableStock serializableStock = new SerializableStock();//para la serializacion
         static Sistema()
         {
             CargarUsuarios();
             controlStock = ControlStock.GetInstance(); // Obtener la instancia existente
+            serializableStock = new SerializableStock(); // Inicializar la instancia
         }
 
         private static void CargarUsuarios()
@@ -335,5 +338,44 @@ namespace Entidades
             }
             return 0;
         }
+
+
+        public static void ModificarDatosPersonales(string nombre, string apellido, DateTime fechaNacimiento, string documento, string email)
+        {
+            // Obtener el usuario conectado
+            Usuario usuario = UsuarioConectado;
+
+            // Actualizar los datos personales del usuario
+            usuario.Nombre = nombre;
+            usuario.Apellido = apellido;
+            usuario.FechaNacimiento = fechaNacimiento;
+            usuario.Dni = documento;
+            usuario.Email = email;
+            Conexion.EditarUsuario(usuario);
+
+        }
+
+        /// <summary>
+        /// Ordena la lista de manera ascendente utilizando el comparador especificado.
+        /// </summary>
+        /// <typeparam name="T">El tipo de elementos en la lista.</typeparam>
+        /// <param name="lista">La lista a ordenar.</param>
+        /// <param name="comparador">Función de comparación que determina el orden entre dos elementos.</param>
+        public static void OrdenarDeManeraAscendente<T>(List<T> lista, Func<T, T, int> comparador)
+        {
+            lista.Sort((a, b) => comparador(a, b));
+        }
+
+        /// <summary>
+        /// Ordena la lista de manera descendente utilizando el comparador especificado.
+        /// </summary>
+        /// <typeparam name="T">El tipo de elementos en la lista.</typeparam>
+        /// <param name="lista">La lista a ordenar.</param>
+        /// <param name="comparador">Función de comparación que determina el orden entre dos elementos.</param>
+        public static void OrdenarDeManeraDescendente<T>(List<T> lista, Func<T, T, int> comparador)
+        {
+            lista.Sort((a, b) => comparador(b, a));
+        }
+
     }
 }

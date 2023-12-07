@@ -24,6 +24,7 @@ namespace ParcialLabo2
             dataGridStock.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewRollers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewEmpaquetado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void btnCrearRoller_Click(object sender, EventArgs e)
@@ -85,12 +86,13 @@ namespace ParcialLabo2
             }
         }
 
-        private void btn_Empaquetar_Click(object sender, EventArgs e)
+        private async void btn_Empaquetar_Click(object sender, EventArgs e)
         {
             try
             {
                 if (Sistema.EmpaquetarRoller(tipoSeleccionadoParaEmpaquetar))
                 {
+                    await EnsamblarRoller();
                     MessageBox.Show("El roller ha sido empaquetado y agregado al inventario.");
                     MostrarRollersEmpaquetadosEnDataGridView();
                     ActualizarDataGridView();
@@ -106,6 +108,11 @@ namespace ParcialLabo2
                 LogErrores.RegistrarError(ex.Message, typeof(FormCrearRollers).Name, nameof(btn_Empaquetar));
             }
 
+        }
+
+        private async Task EnsamblarRoller()
+        {
+            await Task.Delay(3000);
         }
 
         private void MostrarRollersEmpaquetadosEnDataGridView()
@@ -135,6 +142,16 @@ namespace ParcialLabo2
         private void rdoEmpaquetarSobreHielo_CheckedChanged(object sender, EventArgs e)
         {
             tipoSeleccionadoParaEmpaquetar = "PatinSobreHielo";
+        }
+
+        private void FormCrearRollers_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCrearRollers_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

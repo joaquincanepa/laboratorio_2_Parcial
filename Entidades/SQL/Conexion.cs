@@ -8,7 +8,7 @@ using System.Data;
 using System.Net;
 using DateTime = System.DateTime;
 
-using Xceed.Wpf.Toolkit;
+
 
 namespace Entidades.SQL
 {
@@ -66,8 +66,6 @@ namespace Entidades.SQL
             }
             catch (Exception ex)
             {
-                //MessageBox.Show($"Error al agregar el operario: {ex.Message}");
-                //MessageBox.Show($"");
                 return false;
             }
         }
@@ -80,7 +78,6 @@ namespace Entidades.SQL
             }
             catch (Exception ex)
             {
-                //MessageBox.Show($"Error al agregar el paciente: {ex.Message}");
                 return false;
             }
         }
@@ -95,7 +92,6 @@ namespace Entidades.SQL
             }
             catch (Exception ex)
             {
-                //MessageBox.Show($"Error al borrar el operario: {ex.Message}");
                 return false;
             }
         }
@@ -108,7 +104,6 @@ namespace Entidades.SQL
             }
             catch (Exception ex)
             {
-                //MessageBox.Show($"Error al borrar el paciente: {ex.Message}");
                 return false;
             }
         }
@@ -122,7 +117,6 @@ namespace Entidades.SQL
             }
             catch (Exception ex)
             {
-               // MessageBox.Show($"Error al editar observaciones {ex.Message}");
                 return false;
             }
         }

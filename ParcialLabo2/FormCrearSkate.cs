@@ -14,6 +14,7 @@ namespace ParcialLabo2
     public partial class FormCrearSkate : Form
     {
         private ControlStock controlStock;
+        private bool salioDelForm;
         public FormCrearSkate()
         {
             InitializeComponent();
@@ -41,15 +42,27 @@ namespace ParcialLabo2
         }
 
 
-        private void btn_Ensamblado_Click(object sender, EventArgs e)
+        private async Task EnsamblarSkate()
+        {
+            await Task.Delay(3000);
+            Eventos.Invoke("Skate", 1);
+
+        }
+
+        private async void btn_Ensamblado_Click(object sender, EventArgs e)
         {
             try
             {
                 if (Sistema.EnsamblarSkate())
                 {
+
+                    await EnsamblarSkate();
                     MessageBox.Show("El skate ha sido ensamblado y agregado al inventario.");
-                    MostrarSkatesEnsambladosEnDataGridView();
-                    MostrarSkatesEnDataGridView();
+                    if (salioDelForm == false)
+                    {
+                        MostrarSkatesEnsambladosEnDataGridView();
+                        MostrarSkatesEnDataGridView();
+                    }
                 }
                 else
                 {
@@ -61,8 +74,10 @@ namespace ParcialLabo2
                 MessageBox.Show($"Error al intentar ensamblar el skate: {ex.Message}", "Error de Ensamblaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LogErrores.RegistrarError(ex.Message, typeof(FormCrearSkate).Name, nameof(btn_Ensamblado));
             }
-           
+
         }
+
+
 
         private void MostrarStockEnDataGridView()
         {
@@ -83,19 +98,27 @@ namespace ParcialLabo2
 
         private void MostrarSkatesEnsambladosEnDataGridView()
         {
-
-            dataGridViewEnsamblado.Rows.Clear();
-
-            foreach (var skateEnsamblado in Sistema.listaDeSkateEnsamblados)
+            if (dataGridViewEnsamblado != null)
             {
-                dataGridViewEnsamblado.Rows.Add(skateEnsamblado.FechaFabricacion, skateEnsamblado.NumeroSerie, skateEnsamblado.Modelo);
+                dataGridViewEnsamblado.Rows.Clear();
+
+                foreach (var skateEnsamblado in Sistema.listaDeSkateEnsamblados)
+                {
+                    dataGridViewEnsamblado.Rows.Add(skateEnsamblado.FechaFabricacion, skateEnsamblado.NumeroSerie, skateEnsamblado.Modelo);
+                }
+                dataGridViewEnsamblado.Rows.Add("", "", "Cantidad Total de Skates Ensamblados:", Sistema.listaDeSkateEnsamblados.Count);
             }
-            dataGridViewEnsamblado.Rows.Add("", "", "Cantidad Total de Skates Ensamblados:", Sistema.listaDeSkateEnsamblados.Count);
+
         }
 
         private void dataGridStockCrearSkate_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridStockCrearSkate.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;//Acomodo las columnasd
+        }
+
+        private void FormCrearSkate_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            salioDelForm = true;
         }
     }
 }

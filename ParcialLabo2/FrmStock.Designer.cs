@@ -100,7 +100,7 @@
             pnl_contedorStock.Dock = DockStyle.Top;
             pnl_contedorStock.Location = new Point(0, 0);
             pnl_contedorStock.Name = "pnl_contedorStock";
-            pnl_contedorStock.Size = new Size(668, 184);
+            pnl_contedorStock.Size = new Size(818, 235);
             pnl_contedorStock.TabIndex = 0;
             // 
             // dataGrid_Stock
@@ -111,7 +111,7 @@
             dataGrid_Stock.Location = new Point(0, 0);
             dataGrid_Stock.Name = "dataGrid_Stock";
             dataGrid_Stock.RowTemplate.Height = 25;
-            dataGrid_Stock.Size = new Size(668, 184);
+            dataGrid_Stock.Size = new Size(818, 235);
             dataGrid_Stock.TabIndex = 0;
             // 
             // grp_Madera
@@ -119,7 +119,7 @@
             grp_Madera.Controls.Add(btn_AgregarMadera);
             grp_Madera.Controls.Add(NUD_Madera);
             grp_Madera.ForeColor = SystemColors.ButtonHighlight;
-            grp_Madera.Location = new Point(24, 190);
+            grp_Madera.Location = new Point(21, 241);
             grp_Madera.Name = "grp_Madera";
             grp_Madera.Size = new Size(135, 88);
             grp_Madera.TabIndex = 1;
@@ -149,7 +149,7 @@
             grp_Tornillos.Controls.Add(btn_AgregarTornillos);
             grp_Tornillos.Controls.Add(NUD_Tornillos);
             grp_Tornillos.ForeColor = SystemColors.ButtonHighlight;
-            grp_Tornillos.Location = new Point(179, 190);
+            grp_Tornillos.Location = new Point(194, 241);
             grp_Tornillos.Name = "grp_Tornillos";
             grp_Tornillos.Size = new Size(135, 88);
             grp_Tornillos.TabIndex = 4;
@@ -179,7 +179,7 @@
             grpRuedas.Controls.Add(btn_AgregarRuedas);
             grpRuedas.Controls.Add(NUD_Ruedas);
             grpRuedas.ForeColor = SystemColors.ButtonHighlight;
-            grpRuedas.Location = new Point(344, 190);
+            grpRuedas.Location = new Point(379, 241);
             grpRuedas.Name = "grpRuedas";
             grpRuedas.Size = new Size(135, 88);
             grpRuedas.TabIndex = 5;
@@ -209,7 +209,7 @@
             grpTrucks.Controls.Add(btnAgregarTrucks);
             grpTrucks.Controls.Add(NUDTrucks);
             grpTrucks.ForeColor = SystemColors.ButtonHighlight;
-            grpTrucks.Location = new Point(508, 190);
+            grpTrucks.Location = new Point(582, 241);
             grpTrucks.Name = "grpTrucks";
             grpTrucks.Size = new Size(135, 88);
             grpTrucks.TabIndex = 6;
@@ -239,7 +239,7 @@
             grpBotaDeCuero.Controls.Add(btn_AgregarBotaDeCuero);
             grpBotaDeCuero.Controls.Add(NUD_BotaDeCuero);
             grpBotaDeCuero.ForeColor = SystemColors.ButtonHighlight;
-            grpBotaDeCuero.Location = new Point(24, 293);
+            grpBotaDeCuero.Location = new Point(30, 347);
             grpBotaDeCuero.Name = "grpBotaDeCuero";
             grpBotaDeCuero.Size = new Size(135, 102);
             grpBotaDeCuero.TabIndex = 7;
@@ -269,7 +269,7 @@
             grp_Aluminio.Controls.Add(btnAgregarAluminio);
             grp_Aluminio.Controls.Add(NUD_Aluminio);
             grp_Aluminio.ForeColor = SystemColors.ButtonHighlight;
-            grp_Aluminio.Location = new Point(179, 291);
+            grp_Aluminio.Location = new Point(200, 361);
             grp_Aluminio.Name = "grp_Aluminio";
             grp_Aluminio.Size = new Size(135, 88);
             grp_Aluminio.TabIndex = 8;
@@ -299,7 +299,7 @@
             grpCatalizador.Controls.Add(btn_AgregarTacoDelantero);
             grpCatalizador.Controls.Add(NUD_TacoDelantero);
             grpCatalizador.ForeColor = SystemColors.ButtonHighlight;
-            grpCatalizador.Location = new Point(344, 291);
+            grpCatalizador.Location = new Point(388, 347);
             grpCatalizador.Name = "grpCatalizador";
             grpCatalizador.Size = new Size(135, 104);
             grpCatalizador.TabIndex = 9;
@@ -329,7 +329,7 @@
             grpFibraDeCarbono.Controls.Add(btn_AgregarFibraDeCarbono);
             grpFibraDeCarbono.Controls.Add(NUD_FibraDeCarbono);
             grpFibraDeCarbono.ForeColor = SystemColors.ButtonHighlight;
-            grpFibraDeCarbono.Location = new Point(185, 411);
+            grpFibraDeCarbono.Location = new Point(200, 486);
             grpFibraDeCarbono.Name = "grpFibraDeCarbono";
             grpFibraDeCarbono.Size = new Size(135, 88);
             grpFibraDeCarbono.TabIndex = 9;
@@ -359,7 +359,7 @@
             grp_Cordones.Controls.Add(btn_AgreagrCordones);
             grp_Cordones.Controls.Add(NUD_Cordones);
             grp_Cordones.ForeColor = SystemColors.ButtonHighlight;
-            grp_Cordones.Location = new Point(508, 291);
+            grp_Cordones.Location = new Point(582, 361);
             grp_Cordones.Name = "grp_Cordones";
             grp_Cordones.Size = new Size(135, 88);
             grp_Cordones.TabIndex = 9;
@@ -389,7 +389,7 @@
             grpCierre.Controls.Add(btn_AgregarCierre);
             grpCierre.Controls.Add(NUD_Cierre);
             grpCierre.ForeColor = SystemColors.ButtonHighlight;
-            grpCierre.Location = new Point(350, 411);
+            grpCierre.Location = new Point(382, 486);
             grpCierre.Name = "grpCierre";
             grpCierre.Size = new Size(135, 88);
             grpCierre.TabIndex = 9;
@@ -419,7 +419,7 @@
             grpCuchilla.Controls.Add(btn_AgregarCuchilla);
             grpCuchilla.Controls.Add(NUD_Cuchilla);
             grpCuchilla.ForeColor = SystemColors.ButtonHighlight;
-            grpCuchilla.Location = new Point(508, 411);
+            grpCuchilla.Location = new Point(582, 486);
             grpCuchilla.Name = "grpCuchilla";
             grpCuchilla.Size = new Size(135, 88);
             grpCuchilla.TabIndex = 10;
@@ -449,7 +449,7 @@
             groupBox1.Controls.Add(btn_AgregarBotasPlastico);
             groupBox1.Controls.Add(NUD_BotasPlastico);
             groupBox1.ForeColor = SystemColors.ButtonHighlight;
-            groupBox1.Location = new Point(24, 401);
+            groupBox1.Location = new Point(24, 486);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(135, 100);
             groupBox1.TabIndex = 11;
@@ -479,7 +479,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 7, 17);
-            ClientSize = new Size(668, 522);
+            ClientSize = new Size(818, 622);
             Controls.Add(groupBox1);
             Controls.Add(grpCuchilla);
             Controls.Add(grp_Cordones);
@@ -493,8 +493,8 @@
             Controls.Add(grp_Tornillos);
             Controls.Add(grp_Madera);
             Controls.Add(pnl_contedorStock);
-            MaximumSize = new Size(684, 561);
-            MinimumSize = new Size(684, 561);
+            MaximumSize = new Size(834, 661);
+            MinimumSize = new Size(834, 661);
             Name = "FrmReponerStock";
             Text = "Form Reponer Stock";
             Load += FrmReponerStock_Load;

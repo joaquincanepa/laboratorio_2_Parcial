@@ -68,31 +68,16 @@ namespace Entidades
                 }
                 retorno = true;
             }
+            catch (InvalidOperationException ex)
+            {
+                retorno = false;
+            }
             catch (Exception ex)
             {
-
-                //MessageBox.Show("Error al serializar los usuarios: " + ex.Message); REVISARRR
                 retorno = false;
             }
             return retorno;
 
-            /*bool retorno = false;
-            try
-            {
-                using (this.writer = new StreamWriter(this.path))
-                {
-                    this.serializer = new XmlSerializer(typeof(T));
-
-                    this.serializer.Serialize(this.writer, item);
-                }
-                retorno = true;
-            }
-            catch (Exception ex )
-            {
-                MessageBox.Show("Error al serializar los usuarios: " + ex.Message);
-                retorno = false;
-            }
-            return retorno;*/
         }
 
     }

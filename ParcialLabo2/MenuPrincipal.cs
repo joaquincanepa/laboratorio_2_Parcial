@@ -18,10 +18,11 @@ namespace ParcialLabo2
         {
             InitializeComponent();
             OcultarSubMenu();
+            Estilos.CargarEstilosDeljson();
             btn_MostrarUsuarios.Visible = false;
             if (Sistema.UsuarioConectado.ObtenerTipoDeUsuario() == "Supervisor")
             {
-                btn_MostrarUsuarios.Visible= true;
+                btn_MostrarUsuarios.Visible = true;
             }
         }
         private void OcultarSubMenu()
@@ -102,6 +103,7 @@ namespace ParcialLabo2
             pnl_MenuPrincipal.Controls.Add(childForm);
             pnl_MenuPrincipal.Tag = childForm;
             childForm.BringToFront();
+            Estilos.ActualizarTamanioFuente(childForm);
             childForm.Show();
         }
 
@@ -109,10 +111,20 @@ namespace ParcialLabo2
         {
             openChildForm(new FrmReponerStock());
         }
-    
+
         private void btn_MostrarUsuarios_Click(object sender, EventArgs e)
         {
             openChildForm(new FormListaUsuarioscs());
+        }
+
+        private void btn_misDatos_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CuentaMisDatos());
+        }
+
+        private void btn_tamanioFuente_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmTamanioFuente());
         }
     }
 }

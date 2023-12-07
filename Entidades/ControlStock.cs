@@ -4,15 +4,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
+    [Serializable]
+    public class SerializableStock//clase para poder serializar
+    {
+        public List<StockItem> StockMateriaPrima { get; set; }
+    }
+
+    [Serializable]
+    public class StockItem//para la serializacion
+    {
+        public string Material { get; set; }
+        public int Cantidad { get; set; }
+    }
+
+
+    [XmlInclude(typeof(Dictionary<string, int>))]
+    [Serializable]
     public class ControlStock
     {
         private static ControlStock instacia;
+        public SerializableStock SerializableStock { get; private set; }//para la serializacion
         public Dictionary<string, int> StockMateriaPrima { get; private set; }      
         public ControlStock()
         {
+            SerializableStock = new SerializableStock();//para la serializacion
             StockMateriaPrima = new Dictionary<string, int>
             {
                 { "Madera", 88 },
@@ -29,7 +48,6 @@ namespace Entidades
                 { "FibraDeCarbono", 100 },
                 { "Cierre", 100 },
                  //Para patin SobreHielo
-                 //cuero, cierre, cordones, fibra de carbono
                 { "Cuchilla", 100 },
             };
         }

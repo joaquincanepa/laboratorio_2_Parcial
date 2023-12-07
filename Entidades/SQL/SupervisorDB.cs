@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xceed.Wpf.Toolkit;
+
 
 namespace Entidades.SQL
 {
@@ -28,12 +28,14 @@ namespace Entidades.SQL
                             $"SELECT CAST(scope_identity() AS int);";
 
                 var usuarioid = EjecutarNonQuery(query1);
+
+                var query2 = $"INSERT INTO Supervisor (idUsuario) VALUES ('{usuarioid}')";
+                var operarioId = EjecutarNonQuery(query2);
                 return true;
             }
             catch (Exception ex)
             {
-                //MessageBox.Show($"Error al agregar el Supervisor: {ex.Message}");
-                return false;
+                throw new Exception($"Error al agregar el Supervisor: {ex.Message}");
             }
         }
 
@@ -42,8 +44,7 @@ namespace Entidades.SQL
 
             try
             {
-                Conexion.BorrarSupervisor(id);
-                // Obtener el ID del usuario asociado al médico
+                // Obtener el ID del usuario asociado al Supervisor
                 string query1 = $"SELECT idUsuario FROM Supervisor WHERE supervisorId = {id}";
                 int idUsuario;
 
@@ -56,20 +57,18 @@ namespace Entidades.SQL
                     }
                 }
 
-                // Eliminar el médico de la tabla Supervisor
+                // Eliminar el Supervisor de la tabla Supervisor
                 string query2 = $"DELETE FROM Supervisor WHERE supervisorId = {id}";
                 EjecutarNonQuery(query2);
-
                 // Eliminar el usuario de la tabla Usuario
                 string query3 = $"DELETE FROM Usuario WHERE idUsuario = {idUsuario}";
                 EjecutarNonQuery(query3);
 
-                return true;
+                return EliminarUsuario(idUsuario);
             }
             catch (Exception ex)
             {
-                //MessageBox.Show($"Error al borrar el médico: {ex.Message}");
-                return false;
+                throw new Exception($"Error al borrar el Supervisor: {ex.Message}");
             }
         }
 
@@ -93,24 +92,35 @@ namespace Entidades.SQL
                 var password = item["contrasenia"].ToString();
                 var supervisorId = Convert.ToInt32(item["supervisorId"]);
                 var UsuarioId = Convert.ToInt32(item["idUsuario"]);
-
                 DateTime fechaNacimiento;
-                if (DateTime.TryParse(fechaNacimientoStr, out fechaNacimiento))
+                try
                 {
-                    supervisor.Add(new Supervisor(nombre, apellido, fechaNacimiento, dni, email, password, supervisorId, UsuarioId));
+                    if (DateTime.TryParse(fechaNacimientoStr, out fechaNacimiento))
+                    {
+                        supervisor.Add(new Supervisor(nombre, apellido, fechaNacimiento, dni, email, password, supervisorId, UsuarioId));
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    //MessageBox.Show("Error en traer los pacientes");
+                    throw new Exception($"Error al traer los usuario: {ex.Message}");
                 }
             }
-
             return supervisor;
         }
 
-        public List<Supervisor> Traer(int id)
+
+        private bool EliminarUsuario(int idUsuario)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string query = $"DELETE FROM Usuario WHERE idUsuario = {idUsuario}";
+                EjecutarNonQuery(query);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al eliminar el usuario: {ex.Message}");
+            }
         }
     }
 }

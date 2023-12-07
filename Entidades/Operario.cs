@@ -20,6 +20,13 @@ namespace Entidades
             this.idOperario = Id;
         }
 
+        // Agrego un constructor sin parámetros
+        public Operario() : base("", "", DateTime.Now, "", "", "", -1)
+        {
+            //para serializar
+        }
+
+
         public int IdOperario { get => idOperario; set => idOperario = value; }
         public override string ObtenerTipoDeUsuario()//polimorfismo/herencia
         {
