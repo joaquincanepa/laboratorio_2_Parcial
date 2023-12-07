@@ -264,6 +264,7 @@
             Controls.Add(pnl_FondoCrearSkate);
             Controls.Add(grpSeleccionCrear);
             Name = "FormCrearRollers";
+            FormClosing += FormCrearRollers_FormClosing;
             Load += FormCrearRollers_Load;
             Paint += FormCrearRollers_Paint;
             grpSeleccionCrear.ResumeLayout(false);

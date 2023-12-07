@@ -60,7 +60,6 @@
             dataGridStockCrearSkate.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridStockCrearSkate.Columns.AddRange(new DataGridViewColumn[] { Material, Cantidad });
             dataGridStockCrearSkate.Dock = DockStyle.Fill;
-            dataGridStockCrearSkate.Enabled = false;
             dataGridStockCrearSkate.Location = new Point(0, 0);
             dataGridStockCrearSkate.Name = "dataGridStockCrearSkate";
             dataGridStockCrearSkate.ReadOnly = true;
@@ -143,7 +142,6 @@
             dataGridViewListaSkate.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewListaSkate.Columns.AddRange(new DataGridViewColumn[] { CantidadDeSkatesCreados, Total });
             dataGridViewListaSkate.Dock = DockStyle.Fill;
-            dataGridViewListaSkate.Enabled = false;
             dataGridViewListaSkate.Location = new Point(0, 0);
             dataGridViewListaSkate.Name = "dataGridViewListaSkate";
             dataGridViewListaSkate.RowTemplate.Height = 25;
@@ -177,7 +175,6 @@
             dataGridViewEnsamblado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewEnsamblado.Columns.AddRange(new DataGridViewColumn[] { Fecha, NumeroSerie, Modelo, CantidadEnsamblados });
             dataGridViewEnsamblado.Dock = DockStyle.Fill;
-            dataGridViewEnsamblado.Enabled = false;
             dataGridViewEnsamblado.Location = new Point(0, 0);
             dataGridViewEnsamblado.Name = "dataGridViewEnsamblado";
             dataGridViewEnsamblado.RowTemplate.Height = 25;

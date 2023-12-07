@@ -14,48 +14,11 @@ namespace ParcialLabo2
 {
     public partial class FormCrearOperario : ParcialLabo2.FormCrearSupervisor
     {
-        CancellationTokenSource cancellationTokenSource;
+        private CancellationTokenSource cancellationTokenSource;
+        private bool isCancelled = false;
         public FormCrearOperario()
         {
             InitializeComponent();
-        }
-
-        private void IncrementarBarraProgreso(ProgressBar progressBar, Label label, int idHilo)
-        {
-            if (InvokeRequired)
-            {
-                Action<ProgressBar, Label, int> delegado = IncrementarBarraProgreso;
-                object[] parametros = new object[] { progressBar, label, idHilo };
-                Invoke(delegado, parametros);
-            }
-            else
-            {
-                label.Text = $"Hilo N°{idHilo} - {progressBar.Value}%";
-                progressBar.Increment(1);
-            }
-        }
-
-        private void FinalizarProceso(ProgressBar progressBar, Label label, Operario operario)
-        {
-            if (InvokeRequired)
-            {
-                Action<ProgressBar, Label, Operario> delegado = FinalizarProceso;
-                object[] parametros = new object[] { progressBar, label, operario };
-                Invoke(delegado, parametros);
-            }
-            else
-            {
-                if (progressBar.Value == progressBar.Maximum)
-                {
-                    label1.Text = "Finalizado";
-                    Sistema.ListaDeUsuarios.Add(operario);
-                    MessageBox.Show("Usuario Operario creado correctamente.");
-                }
-                else
-                {
-                    label1.Text = "Cancelado";
-                }
-            }
         }
 
         private async void btnCrearUsuarioOperario_Click(object sender, EventArgs e)
@@ -73,16 +36,38 @@ namespace ParcialLabo2
 
                 if (error == null)
                 {
-                    Operario operario = new Operario(nombre, apellido, fechaNacimiento, dni, email, password, -1, -1);
-                    if (Conexion.AgregarOperario(operario))
+                    cancellationTokenSource = new CancellationTokenSource();
+                    IProgress<int> progress = new Progress<int>(value =>
                     {
-                        await IniciarHiloAsync(operario);
-                        MessageBox.Show("Operación completada.");
-                        Close();  // Mover el cierre del formulario aquí
+                        // Actualizar la barra de progreso
+                        progressBar1.Value = value;
+                    });
+
+                    try
+                    {
+                        btnLimpiarDatosCrearUsuario.Enabled = false;
+                        await SubirUsuarioAsync(progress, cancellationTokenSource.Token, nombre, apellido, fechaNacimiento, dni, email, password);
+
+                        if (!isCancelled)
+                        {
+                            Operario operario = new Operario(nombre, apellido, fechaNacimiento, dni, email, password, -1, -1);
+                            if (Conexion.AgregarOperario(operario))
+                            {
+                                MessageBox.Show("Operación completada.");
+                                Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error al agregar el operario");
+                            }
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Error al agregar el operario");
+                        MessageBox.Show($"{ex.Message}");
+                    }
+                    finally{ 
+                        btnLimpiarDatosCrearUsuario.Enabled = true;
                     }
                 }
                 else
@@ -97,82 +82,56 @@ namespace ParcialLabo2
             }
         }
 
-
-        private async Task IniciarHiloAsync(Operario operario)
+        private async Task SubirUsuarioAsync(IProgress<int> progress, CancellationToken cancellationToken, string nombre, string apellido, DateTime fechaNacimiento, string dni, string email, string password)
         {
-            cancellationTokenSource = new CancellationTokenSource();
-            CancellationToken cancellationToken = cancellationTokenSource.Token;
-
-            try
+            await Task.Run(() =>
             {
-                await Task.Run(() => IniciarProceso(progressBar1, label1, operario, cancellationToken), cancellationToken);
-            }
-            catch (OperationCanceledException)
-            {
-                // Manejar la cancelación aquí, si es necesario
-                MessageBox.Show("Operación cancelada.");
-            }
-            finally
-            {
-                if (!cancellationTokenSource.Token.IsCancellationRequested)
+                // Operación de subida del usuario
+                for (int i = 0; i <= 100; i++)
                 {
-                    // Solo finalizar si la cancelación no ha sido solicitada
-                    FinalizarProceso(progressBar1, label1, operario);
-                }
-                else
-                {
-                    // Si la cancelación fue solicitada, completar la tarea inmediatamente
-                    cancellationTokenSource = null;
-                }
-            }
-        }
+                    // Verificar si se ha solicitado la cancelación
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        isCancelled = true;
+                        return;
+                    }
 
-
-        private void IniciarProceso(ProgressBar progressBar, Label label, Operario operario, CancellationToken cancellationToken)
-        {
-            try
-            {
-                while (progressBar.Value < progressBar.Maximum)
-                {
-                    cancellationToken.ThrowIfCancellationRequested(); // Check if cancellation is requested
-
-                    Thread.Sleep(new Random().Next(100));
-
-                    // Verificar nuevamente si la cancelación está solicitada antes de incrementar la barra de progreso
-                    cancellationToken.ThrowIfCancellationRequested();
-
-                    IncrementarBarraProgreso(progressBar, label, Task.CurrentId.Value);
+                    // Simular la subida del usuario
+                    Thread.Sleep(100); // Simula una operación de carga
+                    progress.Report(i); // Actualiza la barra de progreso
                 }
 
-                // Verificar nuevamente si la cancelación está solicitada antes de agregar a la base de datos
-                cancellationToken.ThrowIfCancellationRequested();
-
-                // Solo se llegará aquí si la operación no ha sido cancelada
-                FinalizarProceso(progressBar, label, operario);
-            }
-            catch (OperationCanceledException)
-            {
-                // Cancellation is requested
-                MessageBox.Show("Operación cancelada.");
-                // No llamar a FinalizarProceso aquí
-            }
-        }
-
-        private void btn_cancelar_Click(object sender, EventArgs e)
-        {
-            cancellationTokenSource?.Cancel();
+            }, cancellationToken);
         }
 
         private void btnLimpiarDatosCrearUsuario_Click(object sender, EventArgs e)
         {
 
+            LimpiarDatos();
+
+        }
+
+        private void LimpiarDatos()
+        {
+            progressBar1.Value = 0;
             txtApellidoCrearUsuario.Text = string.Empty;
             txtNombreCrearUsuario.Text = string.Empty;
             txtPasswordCrearUsuario.Text = string.Empty;
             txtEmailCrearUsuario.Text = string.Empty;
             txtDniCrearUsuario.Text = string.Empty;
             dateDechaNacimientoCrearUsuarioOperario.SetDate(DateTime.Now);
+            isCancelled = false;
+        }
 
+        private void FormCrearOperario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            cancellationTokenSource?.Cancel();
+            LimpiarDatos();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace ParcialLabo2
     {
         private ControlStock controlStock;
         private string tipoSeleccionadoParaEmpaquetar;
+        private bool salioDelForm;
         public FormCrearRollers()
         {
             InitializeComponent();
@@ -94,8 +95,12 @@ namespace ParcialLabo2
                 {
                     await EnsamblarRoller();
                     MessageBox.Show("El roller ha sido empaquetado y agregado al inventario.");
-                    MostrarRollersEmpaquetadosEnDataGridView();
-                    ActualizarDataGridView();
+                    if (salioDelForm == false)
+                    {
+                        MostrarRollersEmpaquetadosEnDataGridView();
+                        ActualizarDataGridView();
+                    }
+
                 }
                 else
                 {
@@ -113,6 +118,7 @@ namespace ParcialLabo2
         private async Task EnsamblarRoller()
         {
             await Task.Delay(3000);
+            Eventos.Invoke(Sistema.EmpaquetarRoller(tipoSeleccionadoParaEmpaquetar).ToString(), (int)numericUpDownCantidad.Value);
         }
 
         private void MostrarRollersEmpaquetadosEnDataGridView()
@@ -123,7 +129,6 @@ namespace ParcialLabo2
             {
                 dataGridViewEmpaquetado.Rows.Add(rollerEmpaquetado.FechaDefabricacion, rollerEmpaquetado.NumeroSerie1, rollerEmpaquetado.Modelo, rollerEmpaquetado.NombreDelOperario);
             }
-
             // Agrega una fila al final
             dataGridViewEmpaquetado.Rows.Add("", "", "Cantidad Total de roller Empaquetado:", Sistema.listaDeRollerEmpaquetados.Count);
         }
@@ -152,6 +157,11 @@ namespace ParcialLabo2
         private void FormCrearRollers_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void FormCrearRollers_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            salioDelForm = true;
         }
     }
 }
