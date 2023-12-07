@@ -40,7 +40,7 @@ namespace ParcialLabo2
                         MessageBox.Show("Usuario Supervisor creado correctamente.");
                         Close();
                     }
-                   
+
                 }
                 else
                 {

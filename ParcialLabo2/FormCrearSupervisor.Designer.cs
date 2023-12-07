@@ -161,22 +161,28 @@
             // 
             // btnLimpiarDatosCrearUsuario
             // 
-            btnLimpiarDatosCrearUsuario.Location = new Point(243, 319);
+            btnLimpiarDatosCrearUsuario.BackColor = SystemColors.WindowText;
+            btnLimpiarDatosCrearUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLimpiarDatosCrearUsuario.ForeColor = Color.WhiteSmoke;
+            btnLimpiarDatosCrearUsuario.Location = new Point(220, 309);
             btnLimpiarDatosCrearUsuario.Name = "btnLimpiarDatosCrearUsuario";
-            btnLimpiarDatosCrearUsuario.Size = new Size(133, 23);
+            btnLimpiarDatosCrearUsuario.Size = new Size(133, 41);
             btnLimpiarDatosCrearUsuario.TabIndex = 85;
             btnLimpiarDatosCrearUsuario.Text = "Limpiar datos";
-            btnLimpiarDatosCrearUsuario.UseVisualStyleBackColor = true;
+            btnLimpiarDatosCrearUsuario.UseVisualStyleBackColor = false;
             btnLimpiarDatosCrearUsuario.Click += btnLimpiarDatosCrearUsuario_Click;
             // 
             // btnCrearUsuario
             // 
-            btnCrearUsuario.Location = new Point(38, 319);
+            btnCrearUsuario.BackColor = SystemColors.WindowText;
+            btnCrearUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCrearUsuario.ForeColor = Color.WhiteSmoke;
+            btnCrearUsuario.Location = new Point(38, 309);
             btnCrearUsuario.Name = "btnCrearUsuario";
-            btnCrearUsuario.Size = new Size(133, 23);
+            btnCrearUsuario.Size = new Size(133, 41);
             btnCrearUsuario.TabIndex = 84;
             btnCrearUsuario.Text = "Crear Usuario";
-            btnCrearUsuario.UseVisualStyleBackColor = true;
+            btnCrearUsuario.UseVisualStyleBackColor = false;
             btnCrearUsuario.Click += btnCrearUsuario_Click;
             // 
             // FormCrearSupervisor

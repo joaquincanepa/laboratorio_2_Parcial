@@ -361,24 +361,34 @@ namespace Entidades
 
         }
 
+
         /// <summary>
-        /// Ordena la lista de manera ascendente utilizando el comparador especificado.
+        /// Delegado genérico que representa un comparador entre dos elementos de tipo T.
         /// </summary>
-        /// <typeparam name="T">El tipo de elementos en la lista.</typeparam>
-        /// <param name="lista">La lista a ordenar.</param>
-        /// <param name="comparador">Función de comparación que determina el orden entre dos elementos.</param>
-        public static void OrdenarDeManeraAscendente<T>(List<T> lista, Func<T, T, int> comparador)
+        /// <typeparam name="T">Tipo de elementos a comparar.</typeparam>
+        /// <param name="x">Primer elemento a comparar.</param>
+        /// <param name="y">Segundo elemento a comparar.</param>
+        /// <returns>Un entero que indica la relación de orden entre los elementos (negativo si x es menor, cero si son iguales, positivo si x es mayor).</returns>
+        public delegate int Comparador<T>(T x, T y);
+
+
+        /// <summary>
+        /// Ordena una lista de manera ascendente utilizando el comparador especificado.
+        /// </summary>
+        /// <typeparam name="T">Tipo de elementos en la lista.</typeparam>
+        /// <param name="lista">Lista a ordenar.</param>
+        /// <param name="comparador">Comparador que define la relación de orden entre los elementos.</param>
+        public static void OrdenarDeManeraAscendente<T>(List<T> lista, Comparador<T> comparador)
         {
             lista.Sort((a, b) => comparador(a, b));
         }
 
         /// <summary>
-        /// Ordena la lista de manera descendente utilizando el comparador especificado.
+        /// Ordena una lista de manera descendente utilizando el comparador especificado.
         /// </summary>
-        /// <typeparam name="T">El tipo de elementos en la lista.</typeparam>
-        /// <param name="lista">La lista a ordenar.</param>
-        /// <param name="comparador">Función de comparación que determina el orden entre dos elementos.</param>
-        public static void OrdenarDeManeraDescendente<T>(List<T> lista, Func<T, T, int> comparador)
+        /// <typeparam name="T">Tipo de elementos en la lista.</typeparam>
+        /// <param name="lista">Lista a ordenar.</param>
+        public static void OrdenarDeManeraDescendente<T>(List<T> lista, Comparador<T> comparador)
         {
             lista.Sort((a, b) => comparador(b, a));
         }
